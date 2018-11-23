@@ -29,10 +29,30 @@ abstract class Node {
 }
 
 class Value extends Node {
+  double value;
+  
+  double evaluate() {
+    return value;
+  }
 }
 
-class Operation extends Node {
+abstrac class Operation extends Node {
+  Node left;
+  Node right;
+  
+  double evaluate();
+}
 
+class Addition extend Operation {
+  double evaluate() {
+    return left.evaluate() + right.evaluate();
+  }
+}
+
+class Subtraction extend Operation {
+  double evaluate() {
+    return left.evaluate() - right.evaluate();
+  }
 }
 
 ```
