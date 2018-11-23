@@ -22,6 +22,8 @@ class Node {
 ```
 
 #### Clean Code
+Code seems longer, but it is actually a lot easier to read and modify without breaking existing code (Open-Close Principle)
+
 ```java
 
 abstract class Node {
@@ -36,20 +38,20 @@ class Value extends Node {
   }
 }
 
-abstrac class Operation extends Node {
+abstract class BinaryOperation extends Node {
   Node left;
   Node right;
   
   double evaluate();
 }
 
-class Addition extend Operation {
+class Addition extend BinaryOperation {
   double evaluate() {
     return left.evaluate() + right.evaluate();
   }
 }
 
-class Subtraction extend Operation {
+class Subtraction extend BinaryOperation {
   double evaluate() {
     return left.evaluate() - right.evaluate();
   }
